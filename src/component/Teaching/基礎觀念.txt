@@ -1,0 +1,16 @@
+類中的this就是實例對象，沒有this就會指向組件本身
+
+    連續解構賦值
+        const obj = { a: { b: { c: 1 } } }
+        const { a: { b: { c } } } = obj   
+        console.log(c)
+        
+    同時也可改變變量名稱
+        const { a: { b: { c:data } } } = obj
+        console.log(data)
+
+React中:
+		使用children props: 通过组件标签体传入结构
+
+	    <B>xxxx</B>
+	        {this.props.children} children等於 B 標籤裡面的 xxxx
