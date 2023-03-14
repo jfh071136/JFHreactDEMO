@@ -63,7 +63,7 @@ export const Routemap = [
 
 
 
-function renderRoutes(routes) {
+export function renderRoutes(routes) {
     return routes.map((route) => (
         <Route key={route.path} path={route.path} element={<route.component />} >
             {route.children && renderRoutes(route.children)}

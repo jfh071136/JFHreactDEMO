@@ -3,7 +3,7 @@ import { Suspense, useState } from 'react';
 import { Routes, Route, Link, } from 'react-router-dom';
 import Notfound from './Notfound/';
 import { Loading } from './Loading';
-import { Routemap } from '../Router/';
+import { Routemap, renderRoutes } from '../Router/';
 
 
 
@@ -84,20 +84,7 @@ const MyLayout = () => {
                         <Suspense fallback={<Loading />}> {/* 加載畫面訂製 */}
 
                             <Routes>{/* 記得要包再Routes裡面 */}
-                                {
-                                    Routemap.map((route) => {
-
-                                        if (route.children === undefined) {
-                                            return (<Route exact={false} key={route.path} path={route.path} element={<route.component />} />)
-                                        }
-                                        return (
-                                            <Route exact={false} key={route.path} path={route.path} element={<route.component />} >
-                                                {route.children.map((item) => {
-                                                    return <Route key={item.path} path={item.path} element={<item.component />} />
-                                                })}
-                                            </Route>)
-                                    })
-                                }
+                                {renderRoutes(Routemap)}
                                 <Route path="*" element={<Notfound />} />  {/* 找不到網頁導航 */}
                             </Routes>
                         </Suspense>
