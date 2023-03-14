@@ -3,7 +3,7 @@ import { Suspense, useState } from 'react';
 import { Routes, Route, Link, } from 'react-router-dom';
 import Notfound from './Notfound/';
 import { Loading } from './Loading';
-import Routemap from '../Router/';
+import { Routemap } from '../Router/';
 
 
 

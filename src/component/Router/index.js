@@ -1,6 +1,6 @@
+import { Route, } from 'react-router-dom';
 import { lazy } from 'react';
 import Home from '../Pages/Home';
-
 const Nester = lazy(() => import('../Pages/Nester'));   //懶加載 可以不用一進網頁就全部加載
 const Message = lazy(() => import('../Pages/Nester/Message'));
 const TodoList = lazy(() => import('../Pages/TodoList/index'));
@@ -10,7 +10,7 @@ const Count = lazy(() => import('../Pages/Count'));
 const Cake = lazy(() => import('../Pages/Cake'));
 
 
-const Routemap = [
+export const Routemap = [
     {
         path: '/',
         label: 'Home',
@@ -60,6 +60,13 @@ const Routemap = [
 
 
 ];
-export default Routemap
 
 
+
+function renderRoutes(routes) {
+    return routes.map((route) => (
+        <Route key={route.path} path={route.path} element={<route.component />} >
+            {route.children && renderRoutes(route.children)}
+        </Route>
+    ));
+}
