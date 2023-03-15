@@ -2,6 +2,7 @@ import { Route, } from 'react-router-dom';
 import { lazy } from 'react';
 import Home from '../Pages/Home';
 import NewsContent from '../Pages/Nester/News/NewsContent';
+import Weather from '../Pages/Weather';
 const Nester = lazy(() => import('../Pages/Nester'));   //懶加載 可以不用一進網頁就全部加載
 const Message = lazy(() => import('../Pages/Nester/Message'));
 const TodoList = lazy(() => import('../Pages/TodoList/index'));
@@ -72,6 +73,13 @@ export const Routemap = [
         label: 'Cake',
         component: Cake,
     },
+    {
+
+        path: '/Weather',
+        label: '天氣查看',
+        component: Weather,
+    },
+
 
 
 ];

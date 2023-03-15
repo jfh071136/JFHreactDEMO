@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router";
+
 export default function Detail() {
-    const { id, title } = useParams();
+    const { id, title } = useParams(); //從網頁URL拿取Params資料
     const messageDATA = [
         { id: '01', content: '你好，台灣' },
         { id: '02', content: '你好，通霄' },

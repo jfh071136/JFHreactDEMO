@@ -13,7 +13,7 @@ export default class Message extends Component {
             <ul>
                 {this.messageLINK.map((item,) => {
                     return <li key={item.id}>
-                        <Link to={`Detail/${item.id}/${item.title}`}>{item.title}</Link>
+                        <Link to={`Detail/${item.id}/${item.title}`}>{item.title}</Link>      {/* 傳送帶有PARMAS參數的URL */}
                     </li>
                 })}
             </ul>

@@ -5,8 +5,10 @@ import { decrement, increment, AddCake, ZeroCake } from '../../../Redux/Action/i
 export default function Count() {
 
     const dispatch = useDispatch(); //dispatch hooks 來傳送值給reducer
+
     const count = useSelector((state) => state.counter.value);  //從store拿取數據
     const CakeNumber = useSelector((state) => state.counter.CakeNumber);
+
     const countselect = useRef();   //使用ref hooks 來拿到該ref
     const BuyNumber = useRef();
 
