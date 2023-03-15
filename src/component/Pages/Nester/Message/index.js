@@ -11,7 +11,7 @@ export default class Message extends Component {
     render() {
         return <div>
             <ul>
-                {this.messageLINK.map((item, index) => {
+                {this.messageLINK.map((item,) => {
                     return <li key={item.id}>
                         <Link to={`Detail/${item.id}/${item.title}`}>{item.title}</Link>
                     </li>

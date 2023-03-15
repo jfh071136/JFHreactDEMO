@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router";
-
 export default function Detail() {
     const { id, title } = useParams();
     const messageDATA = [
