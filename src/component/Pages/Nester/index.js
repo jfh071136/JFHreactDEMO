@@ -1,18 +1,21 @@
 import React from "react";
-import { Outlet, Link, useNavigate } from 'react-router-dom';
+import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu } from 'antd';
 import { useState, useEffect } from 'react';
 
 
 export default function App() {
-
+    const location = useLocation();
     const navigate = useNavigate();
     useEffect(() => { //載入時執行
-        navigate("/Nester/News", { replace: false })
+
+        location.pathname === '/Nester' &&
+            navigate("/Nester/News", { replace: false })
+
         return () => {  //清除函數
 
         };
-    }, []); //網頁更新時執行
+    }, [location.pathname, navigate]); //網頁更新時執行
 
 
     const [current, setCurrent] = useState('News');

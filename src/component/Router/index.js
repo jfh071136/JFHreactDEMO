@@ -8,7 +8,7 @@ const News = lazy(() => import('../Pages/Nester/News'));
 const GithubSearch = lazy(() => import('../Pages/GithubSearch'));
 const Count = lazy(() => import('../Pages/Count'));
 const Cake = lazy(() => import('../Pages/Cake'));
-
+const Detail = lazy(() => import('../Pages/Nester/Message/Detail'));
 
 export const Routemap = [
     {
@@ -37,6 +37,13 @@ export const Routemap = [
                 path: '/Nester/Message',
                 label: 'Message',
                 component: Message,
+                children: [
+                    {
+                        path: '/Nester/Message/Detail/:id/:title',
+                        label: 'Detail',
+                        component: Detail,
+                    }
+                ]
             },
             {
                 path: '/Nester/News',

@@ -1,31 +1,23 @@
 import React, { Component } from "react";
+import { Outlet } from "react-router";
+import { Link } from "react-router-dom";
 
 export default class Message extends Component {
+    messageLINK = [
+        { id: '01', title: "消息1" },
+        { id: '02', title: "消息2" },
+        { id: '03', title: "消息3" },
+    ]
     render() {
         return <div>
-            <div className="col-xs-6">
-                <div className="panel">
-                    <div className="panel-body">
-                        <div>
-                            <div>
-                                <div>
-                                    <ul>
-                                        <li>
-                                            <a href="/message1">message001</a>&nbsp;&nbsp;
-                                        </li>
-                                        <li>
-                                            <a href="/message2">message002</a>&nbsp;&nbsp;
-                                        </li>
-                                        <li>
-                                            <a href="/message/3">message003</a>&nbsp;&nbsp;
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ul>
+                {this.messageLINK.map((item, index) => {
+                    return <li key={item.id}>
+                        <Link to={`Detail/${item.id}/${item.title}`}>{item.title}</Link>
+                    </li>
+                })}
+            </ul>
+            <Outlet />
         </div>
     }
 }
