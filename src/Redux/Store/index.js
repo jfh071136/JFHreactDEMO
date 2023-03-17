@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../Reducer/index';
-import CakeReducer from '../Reducer/Cake/index';
-import WeatherReducer from '../Reducer/Weather/index';
+import counter from '../Reducer';
+import Cake from '../Reducer/Cake';
+import Weather from '../Reducer/Weather';
+import TaskTodo from '../Reducer/TaskTodo/';
 
 export default configureStore({
     reducer: {
-        counter: counterReducer,
-        Cake: CakeReducer,
-        Weather: WeatherReducer,
+        counter: counter,
+        Cake: Cake,
+        Weather: Weather,
+        TaskTodo: TaskTodo,
     },
 });
