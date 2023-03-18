@@ -2,22 +2,7 @@ import React from "react";
 import { useSelector } from 'react-redux';
 export default function WeatherList() {
 
-    const Weather = useSelector((state) => state.Weather.Weather);  //從store拿取數據
     const City = useSelector((state) => state.Weather.City);  //從store拿取數據
-
-
-    function getItem(key, label) {
-        return {
-            key,
-            label,
-
-        }
-    }
-
-    const items = Weather.map((item) => {
-        return getItem(item.id, item.name)
-    })
-
 
 
     return (

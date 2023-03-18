@@ -1,9 +1,10 @@
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Suspense, useState } from 'react';
 import { Routes, Route, Link, } from 'react-router-dom';
-import Notfound from './Notfound/';
+import Notfound from '../Notfound';
 import { Loading } from './Loading';
-import { Routemap, renderRoutes } from '../Router/';
+import { Routemap, renderRoutes } from '../../Router';
+import ErrorBoundary from '../Error';
 
 
 
@@ -82,11 +83,12 @@ const MyLayout = () => {
                     >
 
                         <Suspense fallback={<Loading />}> {/* 加載畫面訂製 */}
-
-                            <Routes>{/* 記得要包再Routes裡面 */}
-                                {renderRoutes(Routemap)}
-                                <Route path="*" element={<Notfound />} />  {/* 找不到網頁導航 */}
-                            </Routes>
+                            <ErrorBoundary>
+                                <Routes>{/* 記得要包再Routes裡面 */}
+                                    {renderRoutes(Routemap)}
+                                    <Route path="*" element={<Notfound />} />  {/* 找不到網頁導航 */}
+                                </Routes>
+                            </ErrorBoundary>
                         </Suspense>
                     </div>
                 </Content>

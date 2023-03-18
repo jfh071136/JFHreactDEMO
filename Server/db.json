@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "TaskData": [
+    {
+      "name": "66",
+      "content": "6",
+      "points": 6,
+      "id": "D7N5mNRvtu1O0FdZPXG78"
+    },
+    {
+      "name": "鄭富鴻",
+      "content": "6",
+      "points": 6,
+      "id": "O0SVfZAxJ84mNOXJcjqch"
+    }
+  ]
+}

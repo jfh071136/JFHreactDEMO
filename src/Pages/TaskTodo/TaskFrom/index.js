@@ -1,7 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { Form, Input, InputNumber, Button } from 'antd';
 import { useDispatch } from 'react-redux';
-import { AddTask } from '../../../../Redux/Action/TaskTodo'; //導入reducer裡面的函數
+import { AddTask } from '../../../Redux/Action/TaskTodo'; //導入reducer裡面的函數
 
 
 
@@ -15,9 +15,7 @@ const TaskForm = (props) => {
     const onFinish = (values) => {
         const id = nanoid()
         dispatch(AddTask({ ...values, id }))
-        console.log('Received values of form: ', values);
         props.handleOk()
-        console.log(id)
     };
 
     return (

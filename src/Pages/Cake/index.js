@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { AddCake, addcakeList, deletecakeList } from "../../../Redux/Action/Cake";
+import { AddCake, addcakeList, deletecakeList } from "../../Redux/Action/Cake";
 import { List } from 'antd';
 
 const mapStateToProps = state => {  //將store的值取出

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { AutoComplete } from 'antd';
 
-import { getCity } from '../../../../Redux/Action/Weather'
+import { getCity } from '../../../Redux/Action/Weather'
 import { useSelector, useDispatch } from 'react-redux';
 
 

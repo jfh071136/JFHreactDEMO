@@ -1,0 +1,5 @@
+{
+    "port": 3002,
+    "watch": true,
+    "db": "./db.json"
+}

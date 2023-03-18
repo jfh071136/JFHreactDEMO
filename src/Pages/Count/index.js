@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { decrement, increment, AddCake, ZeroCake } from '../../../Redux/Action/index'; //導入reducer裡面的函數
+import { decrement, increment, AddCake, ZeroCake } from '../../Redux/Action/index'; //導入reducer裡面的函數
 
 export default function Count() {
 
